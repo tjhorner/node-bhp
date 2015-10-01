@@ -1,5 +1,5 @@
 var BHP = require('../'),
-    bhp = new BHP(),
+    bhp = new BHP(process.env.BIGHISTORY_COOKIE),
     assert = require('assert');
 
 describe('BigHistoryProject', function(){
