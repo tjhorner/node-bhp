@@ -13,3 +13,7 @@ ASP.NET_SessionId=xxxxxxxxxxxxxxxx; .ASPXAUTH=xxxxxxxxxxxxxxx;
 ```
 
 I know this isn't the best way to authenticate with this, but as Big History Project has no API I can't really think of a better way than this or emulating a DOM and submitting the signin form then getting the cookie. The latter is very insecure.
+
+## Testing
+
+Set the `BIGHISTORY_COOKIE` environment variable to the result of the method described above and run `npm test`.
