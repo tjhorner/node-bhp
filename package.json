@@ -1,6 +1,6 @@
 {
   "name": "bhp",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Node interface for Big History Project API",
   "main": "app.js",
   "scripts": {
@@ -21,8 +21,7 @@
   },
   "homepage": "https://github.com/tjhorner/node-bhp#readme",
   "dependencies": {
-    "node-rest-client": "^1.5.1",
-    "jquery": "~2.1.4",
-    "node-jsdom": "~3.1.5"
+    "cheerio": "^0.20.0",
+    "request": "^2.69.0"
   }
 }

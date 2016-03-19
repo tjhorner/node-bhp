@@ -4,16 +4,24 @@ Node module to interact with the Big History Project API.
 
 ## Authenticated Methods
 
-`getUnitById()` and some other methods will require authentication. This requires you pass in a login cookie to the BHP object.
+`getUnitById()` and some other methods will require authentication. This requires you to login with your Big History Project credentials like so:
 
-You can get your login cookie by logging into bighistoryproject.com then inspect any network request after that. Copy and paste the `ASP.NET_SessionId` and `.ASPXAUTH` cookies and pass them in. It will look something like this:
-
+```javascript
+bhp.login("sickemail", "lamepassword", function(user){
+  // user object will be exposed here, cookies are saved automatically and you're ready to go!
+});
 ```
-ASP.NET_SessionId=xxxxxxxxxxxxxxxx; .ASPXAUTH=xxxxxxxxxxxxxxx;
+
+You can also manually send a cookie with the initialization like this:
+
+```javascript
+var BHP = require('bhp');
+
+var ChangeOverTimeDisciplinesThresholdsClaimTesters = new BHP("some cookie");
 ```
 
-I know this isn't the best way to authenticate with this, but as Big History Project has no API I can't really think of a better way than this or emulating a DOM and submitting the signin form then getting the cookie. The latter is very insecure.
+But cookies do expire, so you'll probably want to do the login method.
 
-## Testing
+**Protip:** You can sign up for a dummy teacher account if you don't feel like using your student account.
 
-Set the `BIGHISTORY_COOKIE` environment variable to the result of the method described above and run `npm test`.
+### MORE DOCUMENTATION COMING SOON! YAY!
