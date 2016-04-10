@@ -70,6 +70,12 @@ function BigHistoryProject(cookie){
     });
   };
 
+  this.getGlossary = function(callback){
+    request.get(apiRoute("glossary"), { headers: BHP_SESSION }, function(err, res, body){
+      if(!err) callback(toJSON(body));
+    });
+  };
+
   return this;
 };
 
