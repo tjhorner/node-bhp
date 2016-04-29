@@ -70,8 +70,20 @@ function BigHistoryProject(cookie){
     });
   };
 
+  this.updateCurrentUser = function(user, callback){
+    request.put(apiRoute("user"), { headers: BHP_SESSION }, function(err, res, body){
+      if(!err) callback(toJSON(body));
+    });
+  };
+
   this.getGlossary = function(callback){
     request.get(apiRoute("glossary"), { headers: BHP_SESSION }, function(err, res, body){
+      if(!err) callback(toJSON(body));
+    });
+  };
+
+  this._getAuthenticated = function(path, callback){
+    request.get(apiRoute(path), { headers: BHP_SESSION }, function(err, res, body){
       if(!err) callback(toJSON(body));
     });
   };
